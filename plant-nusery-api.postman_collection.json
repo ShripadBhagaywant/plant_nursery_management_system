@@ -1,0 +1,2242 @@
+{
+	"info": {
+		"_postman_id": "0aeaab27-76dd-4f77-b018-4dfba6c940ae",
+		"name": "Plant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38446204"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Kyc",
+					"item": [
+						{
+							"name": "KycUploade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPbUB5b3BtYWlsLmNvbSIsImlhdCI6MTc0OTU0NDY1MiwiZXhwIjoxNzQ5NTQ4MjUyfQ.FLSUADBb0Qk6fC7IcPW96oW6IQfxYR1AT03OrWnGS3c",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "documentType",
+											"value": "AADHAR",
+											"type": "text"
+										},
+										{
+											"key": "frontImage",
+											"type": "file",
+											"src": "/C:/Users/Shreepad/Downloads/Icons.jpg"
+										},
+										{
+											"key": "backImage",
+											"type": "file",
+											"src": "/C:/Users/Shreepad/Downloads/Icons.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/kyc/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"kyc",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CheckKyc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1NzQ0LCJleHAiOjE3NDg5NzkzNDR9.FVAMeQ7Mydj0T2TzNKkNREUkZUQA4raaRkEgQNwHzts",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"name\": \"Indoor Decorative Plants\",\r\n  \"description\": \"Updated description for indoor decor plants.\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/kyc/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"kyc",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllKycByAdmin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTQ0MDI2LCJleHAiOjE3NDk1NDc2MjZ9.a67LsuMPsjWsGV8jX0Kg_njkXWZoudsgtBeN2zSYYb0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 7,\r\n  \"items\": [\r\n    {\r\n      \"plantId\": 1,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/kyc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"kyc"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "AddOrUpdateReview",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MjM1MDY1LCJleHAiOjE3NDkyMzg2NjV9.ym1NyKvgrnL1zZOIwTlgOwcrHxHrlNqmHnb4L4oLfy4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"plantId\": 1,\r\n  \"comment\": \"Amazing plant! Very healthy.\",\r\n  \"rating\": 3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/reviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPlantReviewByPlantId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MjMzNzIxLCJleHAiOjE3NDkyMzczMjF9.W2JEU26Vq9DkPQg0k0qccVyjmvcxO-CExaszVqjI_rk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"plantId\": 1,\r\n  \"comment\": \"Amazing plant! Very healthy.\",\r\n  \"rating\": 5\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/reviews/plant/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reviews",
+										"plant",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getReviewByUser",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MjMzNzIxLCJleHAiOjE3NDkyMzczMjF9.W2JEU26Vq9DkPQg0k0qccVyjmvcxO-CExaszVqjI_rk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"plantId\": 1,\r\n  \"comment\": \"Amazing plant! Very healthy.\",\r\n  \"rating\": 5\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/reviews/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reviews",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAvgRetingByPlantId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MjMyMTA4LCJleHAiOjE3NDkyMzU3MDh9.yqlXPe0uA8AmdRKH7w3SH5Glkt-wcDqYxRBm_nFdRdo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"plantId\": 1,\r\n  \"comment\": \"Amazing plant! Very healthy.\",\r\n  \"rating\": 5\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/reviews/average-rating/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reviews",
+										"average-rating",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteReviewByPlantId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MjMyMTA4LCJleHAiOjE3NDkyMzU3MDh9.yqlXPe0uA8AmdRKH7w3SH5Glkt-wcDqYxRBm_nFdRdo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"plantId\": 1,\r\n  \"comment\": \"Amazing plant! Very healthy.\",\r\n  \"rating\": 5\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/reviews/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"reviews",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hari Doe\",\r\n  \"email\": \"Hari@yopmail.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Shripad@yopmail.com\",\r\n    \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPlantsList",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/plants?page=0&size=5&sortBy=name&keyword=Tulsi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plants"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "keyword",
+									"value": "Tulsi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPlantById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/plants/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1NzQ0LCJleHAiOjE3NDg5NzkzNDR9.FVAMeQ7Mydj0T2TzNKkNREUkZUQA4raaRkEgQNwHzts",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlantImage",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/plants/images/plant_Tulsi_1748975551239.png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plants",
+								"images",
+								"plant_Tulsi_1748975551239.png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend-otp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTYwMTMzLCJleHAiOjE3NDk1NjM3MzN9.Rwd135Jwp4AB6s_BExrPkp8UupMd94ahsQZLSTtYduM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Om@yopmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/send-reset-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"send-reset-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify-otp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTYwMTMzLCJleHAiOjE3NDk1NjM3MzN9.Rwd135Jwp4AB6s_BExrPkp8UupMd94ahsQZLSTtYduM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Om@yopmail.com\",\r\n    \"otp\": \"624483\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/verify-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset-Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"Om@yopmail.com\",\r\n  \"newPassword\": \"om12345\",\r\n  \"confirmPassword\": \"om12345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRefresh-token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NjIyNjE2LCJleHAiOjE3NDk2MjYyMTZ9.fQVhQQD1J3pdQLv9ncEFbEJo0GceICV_EvuvpBaONSE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NzU5OTkxLCJleHAiOjE3NTAzNjQ3OTF9.fiSawk-ihxkKnkRQPwvBBlO5jImv_R9MmHfGFgFwvpc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminOnly",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "createCategories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJ1c2VySWQiOjEsImlhdCI6MTc1MDE5MDYxMiwiZXhwIjoxNzUwMTk0MjEyfQ.S-oriGOpGYzq4SzHATp8OTmQWe3zgVsZp9WWCC0J48s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"INDOOR\",\r\n  \"description\": \"Indoor are suitable for our environments.\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpadteCategoryById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1MjQ0LCJleHAiOjE3NDg5Nzg4NDR9.V_2TIYN2WIsJDfEgSiNeA2XGFGi8P-CfDGMLutG7BiE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"name\": \"INDOOR\",\r\n  \"description\": \"Indoor plants are good for health\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllCategories",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1MjQ0LCJleHAiOjE3NDg5Nzg4NDR9.V_2TIYN2WIsJDfEgSiNeA2XGFGi8P-CfDGMLutG7BiE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"name\": \"Indoor Decorative Plants\",\r\n  \"description\": \"Updated description for indoor decor plants.\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCategoryById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1MjQ0LCJleHAiOjE3NDg5Nzg4NDR9.V_2TIYN2WIsJDfEgSiNeA2XGFGi8P-CfDGMLutG7BiE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"name\": \"Indoor Decorative Plants\",\r\n  \"description\": \"Updated description for indoor decor plants.\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrRG9lQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4ODQ5MjMyLCJleHAiOjE3NDg4NTI4MzJ9.B1lBwUZzAU1n_DdW9oCRn2R0BKlSJhIOqzJeITNCxQE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"name\": \"Indoor Decorative Plants\",\r\n  \"description\": \"Updated description for indoor decor plants.\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Plants",
+					"item": [
+						{
+							"name": "addPlants",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJ1c2VySWQiOjEsImlhdCI6MTc1MDE5MDYxMiwiZXhwIjoxNzUwMTk0MjEyfQ.S-oriGOpGYzq4SzHATp8OTmQWe3zgVsZp9WWCC0J48s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tulsi",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "INDOOR",
+											"type": "text"
+										},
+										{
+											"key": "description\t",
+											"value": "Herbal plant",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "categoryId",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Shreepad/Downloads/Tulsi.jpg"
+										},
+										{
+											"key": "bestSeller",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "verified",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/plants",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"plants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdatePlants",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1MjQ0LCJleHAiOjE3NDg5Nzg4NDR9.V_2TIYN2WIsJDfEgSiNeA2XGFGi8P-CfDGMLutG7BiE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tulsi",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "INDOOR",
+											"type": "text"
+										},
+										{
+											"key": "description\t",
+											"value": "Natural plant ",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "150",
+											"type": "text"
+										},
+										{
+											"key": "categoryId",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Shreepad/Downloads/gptPN.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/plants/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"plants",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePlant",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4ODY1ODI1LCJleHAiOjE3NDg4Njk0MjV9.BShdMbBV3KY48-AdtKdYqqNEHsnhOVzCHwMrdSb8UmY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tulsi",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "Indoor Plants",
+											"type": "text"
+										},
+										{
+											"key": "description\t",
+											"value": "Healing plant",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "categoryId",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Shreepad/Downloads/gptPN.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/plants/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"plants",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Inventories",
+					"item": [
+						{
+							"name": "addOrUpdateQuantity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJ1c2VySWQiOjEsImlhdCI6MTc1MDI1MzIxOCwiZXhwIjoxNzUwMjU2ODE4fQ.vkbH3Mb7qq61-yqBgxWLWCHkZO3FAZoDxiCw2DVW41A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"plantId\": 1,\r\n  \"quantity\":10\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/inventory/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"inventory",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetInventoryByPlant",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1MjQ0LCJleHAiOjE3NDg5Nzg4NDR9.V_2TIYN2WIsJDfEgSiNeA2XGFGi8P-CfDGMLutG7BiE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"plantId\": 1,\r\n  \"quantity\": 10\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/inventory/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"inventory",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllInventory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc1MjQ0LCJleHAiOjE3NDg5Nzg4NDR9.V_2TIYN2WIsJDfEgSiNeA2XGFGi8P-CfDGMLutG7BiE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"plantId\": 1,\r\n  \"quantity\": 10\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/inventory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "InventoryWithPagination",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE3NTAwNjExNDksImV4cCI6MTc1MDA2NDc0OX0.0SzAMBPiDT0kqqoMToh9OnC1QaJoSfAnd57YDwGxM2k",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/inventory/paginated?page=0&size=6&search=aleo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"inventory",
+										"paginated"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "6"
+										},
+										{
+											"key": "search",
+											"value": "aleo"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AdminGetAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE3NDk3Njk3MDUsImV4cCI6MTc0OTc3MzMwNX0.blCCR3tThxQPy_AEgQMTm8_9KgXeHk-8ZfQOjni7QrQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserBlock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJ1c2VySWQiOjEsImlhdCI6MTc1MDM1NDI2OSwiZXhwIjoxNzUwMzU3ODY5fQ.C8fCod7a4qm0MMYv6YqUkcPQnhu81EChM0EKNktH_mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/block/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"block",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unblock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTQ0MDI2LCJleHAiOjE3NDk1NDc2MjZ9.a67LsuMPsjWsGV8jX0Kg_njkXWZoudsgtBeN2zSYYb0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/unblock/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"unblock",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdmingetKycByUserId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTQ0ODEzLCJleHAiOjE3NDk1NDg0MTN9.iWrHXnEgYzRI404MBevFm2fcXqFmbducnmooE9h_mqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 7,\r\n  \"items\": [\r\n    {\r\n      \"plantId\": 1,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/kyc/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"kyc",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStutus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTQ0ODEzLCJleHAiOjE3NDk1NDg0MTN9.iWrHXnEgYzRI404MBevFm2fcXqFmbducnmooE9h_mqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kycId\":\"1\",\r\n    \"status\":\"APPROVED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/kyc/1/status?status=APPROVED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"kyc",
+								"1",
+								"status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "APPROVED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserByKycStutus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTQ0ODEzLCJleHAiOjE3NDk1NDg0MTN9.iWrHXnEgYzRI404MBevFm2fcXqFmbducnmooE9h_mqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kycId\":\"1\",\r\n    \"status\":\"APPROVED\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/kyc/status?status=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"kyc",
+								"status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDashboardSummary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTU4ODMxLCJleHAiOjE3NDk1NjI0MzF9.t5Tdbu6wmeb2OLvYbgMgttUG_Yg7tHAVafSFhs-2IsE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Shripad@example.com\",\r\n    \"password\":\"password123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/dashboard-summary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"dashboard-summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "placeOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPbUB5b3BtYWlsLmNvbSIsImlhdCI6MTc0OTU0NDI1MywiZXhwIjoxNzQ5NTQ3ODUzfQ.3O9P4jjlef5WGBm5DmvOiJWFVWs7yg8nDL9Wzt5oh4I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 7,\r\n  \"items\": [\r\n    {\r\n      \"plantId\": 1,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrdersById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBcnVuQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzUwMTcyMDExLCJleHAiOjE3NTAxNzU2MTF9.y3-8BZ0GfajyALJhn5hfHVH_kgF0rhOmVbsZu2Av3NI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"mark@example.com\",\r\n    \"password\":\"password123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTc4ODQ5LCJleHAiOjE3NDg5ODI0NDl9.ZZpyrU7G2EnIptNT1No1PnOdP3KoqMa5gM4BpH6LbFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDQyMzI5LCJleHAiOjE3NDkwNDU5Mjl9.CqqVANDHawgfR5lK6tBN2wZ7k-XqEucPfY7azhxXK5o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"mark@example.com\",\r\n    \"password\":\"password123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MTE5MjAwLCJleHAiOjE3NDkxMjI4MDB9.NUMM0KOuBgIp5BWUKU8W1O82v4p8MdmUw94p8e9iqE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 2,\r\n  \"items\": [\r\n    {\r\n      \"plantId\": 1,\r\n      \"quantity\":5\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ4OTgzNDQyLCJleHAiOjE3NDg5ODcwNDJ9.FZ30OclfctTn9GrbPww9S1VMwIHVtXhYe8A6T5aamys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 2,\r\n  \"items\": [\r\n    {\r\n      \"plantId\": 1,\r\n      \"quantity\": 4\r\n    },\r\n    {\r\n      \"plantId\": 2,\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/cancel/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"cancel",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDM4OTU2LCJleHAiOjE3NDkwNDI1NTZ9.az5yeBY4YnN9fxK0gBT5BzBUblG5rJhHm4iRHnJxl6Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 2,\r\n  \"items\": [\r\n    {\r\n      \"plantId\": 1,\r\n      \"quantity\": 4\r\n    },\r\n    {\r\n      \"plantId\": 2,\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "AddToCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBcnVuQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTc1MDA4MzUyNywiZXhwIjoxNzUwMDg3MTI3fQ.10rmKd_s__ZRS0bgLA6FrENY9wMPfvzDPKpNB3dkPBI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plantId\": 1,\r\n  \"quantity\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateQuentity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDM4OTU2LCJleHAiOjE3NDkwNDI1NTZ9.az5yeBY4YnN9fxK0gBT5BzBUblG5rJhHm4iRHnJxl6Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plantId\": 1,\r\n    \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveTheCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDQ0MzA2LCJleHAiOjE3NDkwNDc5MDZ9.ZX8ZjnuXrO80LkDPlL2dND-fbXHCOFZ3vILIyz9y2jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2/remove/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2",
+								"remove",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCartDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDQ0MzA2LCJleHAiOjE3NDkwNDc5MDZ9.ZX8ZjnuXrO80LkDPlL2dND-fbXHCOFZ3vILIyz9y2jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ClearTheCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDQ0MzA2LCJleHAiOjE3NDkwNDc5MDZ9.ZX8ZjnuXrO80LkDPlL2dND-fbXHCOFZ3vILIyz9y2jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2/clear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MDQ0MzA2LCJleHAiOjE3NDkwNDc5MDZ9.ZX8ZjnuXrO80LkDPlL2dND-fbXHCOFZ3vILIyz9y2jQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "MakePayment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MTM2ODU0LCJleHAiOjE3NDkxNDA0NTR9.Ykg2I4LCpVryZmEkk13fOoPiVYRXcNBK_SnmkPRVcs4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyPayment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYXJrQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5MTM2ODU0LCJleHAiOjE3NDkxNDA0NTR9.Ykg2I4LCpVryZmEkk13fOoPiVYRXcNBK_SnmkPRVcs4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"razorpayOrderId\": \"order_QdYwvwz8TdqxvG\",\r\n  \"razorpayPaymentId\": \"pay_QdZ25oPTrLVUu4\",\r\n  \"razorpaySignature\":\"584d77ca7c10c752c9f8bafa5176ac2d3f687bddc1404d325626a8e7ea235cba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admingGetRecentPayment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NTYwMTMzLCJleHAiOjE3NDk1NjM3MzN9.Rwd135Jwp4AB6s_BExrPkp8UupMd94ahsQZLSTtYduM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Shripad@example.com\",\r\n    \"password\":\"password123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments/recent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"recent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "CreateContact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPbUB5b3BtYWlsLmNvbSIsImlhdCI6MTc0OTMzMDgwMCwiZXhwIjoxNzQ5MzM0NDAwfQ.ot7fUz1g302m7ezC2IrnNlWhrSjZGdr5okYYXGFmGBY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Order Not Delivered\",\r\n    \"message\": \"I ordered a plant 5 days ago, still not received.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminGetAllUserContact",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NjIyNjE2LCJleHAiOjE3NDk2MjYyMTZ9.fQVhQQD1J3pdQLv9ncEFbEJo0GceICV_EvuvpBaONSE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Shripad@example.com\",\r\n    \"password\":\"password123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminResolvedUserQuery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHJpcGFkQHlvcG1haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJ1c2VySWQiOjEsImlhdCI6MTc1MDE5MDYxMiwiZXhwIjoxNzUwMTk0MjEyfQ.S-oriGOpGYzq4SzHATp8OTmQWe3zgVsZp9WWCC0J48s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Order Not Delivered\",\r\n    \"message\": \"I ordered a plant 5 days ago, still not received.\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contacts/resolve/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contacts",
+								"resolve",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
