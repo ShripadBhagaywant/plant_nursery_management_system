@@ -86,7 +86,7 @@ openai.api.key=YOUR_OPENAI_SECRET_KEY
 | Authentication | JWT (JSON Web Tokens) |
 | Payments     | Razorpay Integration     |
 | AI Assistant | OpenAI API               |
----
 
-## 📸 Screenshots and Demo
-_(Coming soon...)_
+---.
+
+## GOOD PROJECT.
